@@ -1,6 +1,14 @@
 [package]
 name = "recheck"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+clap = { version = "4.5.1", features = ["derive"] }
+blake3 = "1.5"
+walkdir = "2.5"
+normalize-line-endings = "0.3"
+flate2 = "1.0"
+tar = "0.4"
+zip = "4.3.0"
+chrono = "0.4"
