@@ -1,14 +1,9 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+pub mod hasher;
+pub mod normalizer;
+pub mod metadata;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use crate::hasher::hash_file;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn compute_recheck_hash(path: &str) -> Result<String, String> {
+    hash_file(path)
 }
