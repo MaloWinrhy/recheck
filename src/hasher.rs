@@ -12,7 +12,8 @@ pub fn hash_file(path: &str) -> Result<String, String> {
         .read_to_string(&mut raw_content)
         .map_err(|e| format!("ErrorReadUTF8 : {}", e))?;
 
-    let normalized = normalized(&raw_content); // Convertit CRLF -> LF
+    let normalized = normalized(&raw_content);
+    
     let hash = blake3::hash(normalized.as_bytes());
 
     Ok(hash.to_hex().to_string())
